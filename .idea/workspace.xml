@@ -4,31 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/MyView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/CanvasDoodle.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/Layout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/Menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/MyController.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/asd.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/Main.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/utils/Routable.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/CanvasDoodleController.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/LayoutController.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" afterDir="false" />
-    </list>
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
