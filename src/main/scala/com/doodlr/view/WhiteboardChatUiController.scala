@@ -62,6 +62,11 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
   def changeColour(action: ActionEvent): Unit = {
     localColorCode = colourPicker.getValue.toString
     //    test if really can be passed by another akka actor
+    //    in handle drag, the event.get coordinates isnt always continous, i.e x=1 when u drag fast, the next time that function is called, x might be 10 or smth
+    //    depends on how fast u drag
+    //    strokelines in updateCanvas draws a line and joins from x = 1 to x = 10
+    //    so if the distance that is not continous is more that 8, we will have a space because of linedashes
+    //    coz strokeline creates a line to join both x
     //    updateCanvas(localColorCode, isDotted = true, 9, 10, 10, 10, 20)
     //    updateCanvas(localColorCode, isDotted = true, 10, 10, 10, 10, 20)
     //    updateCanvas(localColorCode, isDotted = true, 11, 10, 10, 10, 20)
