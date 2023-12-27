@@ -26,7 +26,7 @@ Make sure all devices running your clients and server are under the same network
 ## About running multiple instances of clients (ClientMain)
 1. If you wish to have 1 client instance each on multiple devices
    1. You have to download this code on multiple devices
-   2. You have to change `akka.actor.remote.artery.canonical.hostname` of `client-config.conf` on all your client devices, according to their local IP
+   2. You have to change `akka.actor.remote.artery.canonical.hostname` of `client-config.conf` on all your client devices, according to their local IPs
 2. If you wish to have multiple client instances on 1 device
    1. You have to change `akka.actor.remote.artery.canonical.hostname` of `client-config.conf` on your client device, according to its local IP
 
