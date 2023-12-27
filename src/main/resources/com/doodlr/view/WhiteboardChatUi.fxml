@@ -9,6 +9,8 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -20,30 +22,50 @@
          <children>
             <SplitPane dividerPositions="0.07769423558897243" orientation="VERTICAL" prefHeight="800.0" prefWidth="887.0">
                <items>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="883.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;">
                      <children>
-                        <Slider fx:id="slider" layoutX="561.0" layoutY="12.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="45.0" prefWidth="308.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-                        <ColorPicker fx:id="colourPicker" layoutX="84.0" layoutY="19.0" onAction="#changeColour" prefHeight="31.0" prefWidth="176.0" />
-                        <CheckBox fx:id="dottedCheckbox" layoutX="336.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleDotted" text="Speed-sensitive dotted line" />
-                        <Label fx:id="lineThickness" layoutX="518.0" layoutY="19.0" text="1" />
+                        <Slider fx:id="slider" layoutX="607.0" layoutY="12.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="45.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                        <ColorPicker fx:id="colourPicker" layoutX="201.0" layoutY="14.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
+                        <CheckBox fx:id="dottedCheckbox" layoutX="352.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleDotted" text="Speed-sensitive dotted line" />
+                        <Label fx:id="lineThickness" layoutX="591.0" layoutY="19.0" text="1" />
+                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#changeBlack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/blackpencil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="63.0" layoutY="14.0" onMouseClicked="#changeBlue" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/bluepencil.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="113.0" layoutY="14.0" onMouseClicked="#changeRed" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/redpencil.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lineThickness1" layoutX="14.0" layoutY="2.0" text="Quick Change Colour">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="133.0">
                      <children>
-                        <Canvas fx:id="canvas" height="732.0" onMouseClicked="#handleClick" onMousePressed="#handleMousePressed" onMouseDragged="#handleDrag" width="883.0" />
+                        <Canvas fx:id="canvas" height="732.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
                      </children>
                   </AnchorPane>
                </items>
             </SplitPane>
             <VBox prefHeight="800.0" prefWidth="271.0" style="-fx-background-color: gray;">
                <children>
-                  <ListView prefHeight="672.0" prefWidth="224.0" style="-fx-border-color: black;" />
-                  <TextArea prefHeight="78.0" prefWidth="265.0" promptText="Type your message here">
+                  <ListView fx:id="chatList" prefHeight="672.0" prefWidth="224.0" style="-fx-border-color: black;" />
+                  <TextArea fx:id="chatInput" prefHeight="78.0" prefWidth="265.0" promptText="Type your message here">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextArea>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="271.0" text="Send" />
+                  <Button onMouseClicked="#handleSendChat" mnemonicParsing="false" prefHeight="50.0" prefWidth="271.0" text="Send" />
                </children>
             </VBox>
          </children>

@@ -1,5 +1,6 @@
 package com.doodlr.view
 
+import akka.actor.typed.ActorRef
 import javafx.fxml.FXML
 import scalafx.scene.input.MouseEvent
 import scalafx.Includes.jfxCanvas2sfx
@@ -7,14 +8,20 @@ import scalafx.scene.canvas.Canvas
 import scalafxml.core.macros.sfxml
 import scalafx.scene.paint.{Color, CycleMethod, LinearGradient, Paint, Stop}
 import scalafx.scene.shape.Rectangle
-import scalafx.scene.control.{CheckBox, ColorPicker, Label, Slider}
-import com.doodlr.Main
+import scalafx.scene.control.{CheckBox, ColorPicker, Label, ListView, Slider, TextArea}
+import com.doodlr.ClientMain
+import com.doodlr.actors.Client
+import com.doodlr.models.User
+import scalafx.collections.ObservableBuffer
 import scalafx.event.ActionEvent
+
+import scala.collection.mutable.ArrayBuffer
 
 @sfxml
 class WhiteboardChatUiController(private val canvas: Canvas, private val dottedCheckbox: CheckBox,
                                  private val colourPicker: ColorPicker, private val slider: Slider,
-                                 private val lineThickness: Label) {
+                                 private val lineThickness: Label, private val chatInput: TextArea,
+                                 private val chatList: ListView[String]) {
 
   val gc = canvas.getGraphicsContext2D
 
@@ -33,11 +40,32 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
   var lastXCoordinate: Double = 0
   var lastYCoordinate: Double = 0
 
+  val recievedChats: ObservableBuffer[String] = new ObservableBuffer[String]()
+  chatList.items = recievedChats
+
+  var clientActorRef: Option[ActorRef[Client.Command]] = None
+
   slider.valueProperty().addListener(_ => {
     val value: Int = slider.getValue.toInt
     lineThickness.setText(s"${value}")
     localLineWidth = value
   })
+
+  // Quick change line colour
+  def changeBlack(event: MouseEvent): Unit = {
+    colourPicker.setValue(Color.Black)
+    localColorCode = colourPicker.getValue.toString
+  }
+
+  def changeBlue(event: MouseEvent): Unit = {
+    colourPicker.setValue(Color.Blue)
+    localColorCode = colourPicker.getValue.toString
+  }
+
+  def changeRed(event: MouseEvent): Unit = {
+    colourPicker.setValue(Color.Red)
+    localColorCode = colourPicker.getValue.toString
+  }
 
   def updateCanvas(colorCode: String, isDotted: Boolean, previousXCoordinate: Double, previousYCoordinate: Double, currentXCoordinate: Double, currentYCoordinate: Double, lineWidth: Double): Unit = {
     gc.setLineWidth(lineWidth)
@@ -47,8 +75,8 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
     print(s"color: ${colorCode} | ")
     if (isDotted) {
       println("dotted")
-      gc.setLineDashes(8.0, 25.0) // Set 8-pixel dash, 25-pixel space
-      println(s"x: ${currentXCoordinate}. y: ${currentYCoordinate}")
+      gc.setLineDashes(8.0, 5.0) // Set 8-pixel dash, 25-pixel space
+      println(s"x: ${currentXCoordinate}, y: ${currentYCoordinate}")
       gc.strokeLine(previousXCoordinate, previousYCoordinate, currentXCoordinate, currentYCoordinate)
       gc.setLineDashes() // Reset to solid line
     } else {
@@ -115,5 +143,18 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
     // Fill the canvas with white color
     gc.setFill(Color.White)
     gc.fillRect(0, 0, canvas.width.value, canvas.height.value)
+  }
+
+  def handleSendChat(): Unit = {
+    val textToSend = ClientMain.userName + ": " + chatInput.getText
+    updateChatList(textToSend)
+    Client.members.foreach { user =>
+      ClientMain.userRef ! Client.SendMessageL(user.ref, textToSend)
+    }
+    chatInput.setText("")
+  }
+
+  def updateChatList(chatContext: String): Unit = {
+    recievedChats += chatContext
   }
 }

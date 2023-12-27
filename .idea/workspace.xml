@@ -4,8 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="fixed stroke issue">
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="some comments">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/blackpencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/bluepencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/redpencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/MyConfiguration.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/PeerDiscoveryServerActor.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/models/User.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/protocol/JsonSerializable.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/utils/Routable.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,21 +90,28 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/distributed_systems_class/doodlr/src/main/resources/com/doodlr/view/image&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.30574712&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\com\doodlr\view\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources" />
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\com\doodlr\view" />
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.doodlr.Main" />
-      <module name="doodlr" />
+      <module name="simpleChatProgram" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.doodlr.*" />
@@ -110,6 +135,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.asd" />
+      <item itemvalue="Application.Main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -142,12 +171,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703538846403</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="some comments">
+      <option name="closed" value="true" />
+      <created>1703539486569</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703539486569</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asd" />
     <MESSAGE value="fixed stroke issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed stroke issue" />
+    <MESSAGE value="some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="some comments" />
   </component>
 </project>
