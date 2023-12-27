@@ -19,7 +19,7 @@ according to the local IP of your device
 5. Run `ServerMain`
 6. Run `ClientMain`
 
-You might have to run at lease 2 instances of `ClientMain` to the interactions of clients in action.
+You might have to run at least 2 instances of `ClientMain` to the interactions of clients in action.
 
 Make sure all devices running your clients and server are under the same network.
 
