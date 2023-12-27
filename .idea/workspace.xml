@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="some comments">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/blackpencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/bluepencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/redpencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/MyConfiguration.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/PeerDiscoveryServerActor.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/models/User.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/protocol/JsonSerializable.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="problematic commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/utils/Routable.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" afterDir="false" />
     </list>
@@ -106,7 +94,20 @@
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientMain" type="Application" factoryName="Application" singleton="false">
+      <option name="MAIN_CLASS_NAME" value="com.doodlr.ClientMain" />
+      <module name="simpleChatProgram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.doodlr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -136,6 +137,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ClientMain" />
       <item itemvalue="Application.asd" />
       <item itemvalue="Application.Main" />
     </list>
@@ -179,13 +181,30 @@
       <option name="project" value="LOCAL" />
       <updated>1703539486569</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="problematic commit">
+      <option name="closed" value="true" />
+      <created>1703656863378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703656863378</updated>
+    </task>
+    <task id="LOCAL-00005" summary="problematic commit">
+      <option name="closed" value="true" />
+      <created>1703656883552</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703656883552</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="asd" />
     <MESSAGE value="fixed stroke issue" />
     <MESSAGE value="some comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="some comments" />
+    <MESSAGE value="problematic commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="problematic commit" />
   </component>
 </project>

@@ -10,7 +10,7 @@ import com.doodlr.actors.PeerDiscoveryServerActor
 
 object ServerMain extends App {
   val config: Config = ConfigFactory.load("configs/server-config.conf")
-  val mainSystem = akka.actor.ActorSystem("DoodlrServerHotel", config) //classic
+  val mainSystem = akka.actor.ActorSystem("DoodlrSystem", config) //classic
   val typedSystem: ActorSystem[Nothing] = mainSystem.toTyped
   val cluster = Cluster(typedSystem)
   cluster.manager ! Join(cluster.selfMember.address)

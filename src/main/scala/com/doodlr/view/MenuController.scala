@@ -10,6 +10,7 @@ import scalafxml.core.macros.sfxml
 import scalafx.scene.paint.{Color, CycleMethod, LinearGradient, Stop}
 import scalafx.scene.shape.Rectangle
 import com.doodlr.ClientMain
+import com.doodlr.ClientMain.WhiteboardChatUi
 import com.doodlr.actors.Client
 import scalafx.event.ActionEvent
 import scalafx.scene.control.Alert.AlertType
@@ -24,7 +25,7 @@ class MenuController (private val joinButton: Button, private val nameField: Tex
     if (userName.nonEmpty) {
       ClientMain.userName = userName
       clientActorRef map (_ ! Client.StartJoin(userName))
-      ClientMain.setPageWhiteBoard()
+      WhiteboardChatUi.load()
     } else {
       new Alert(AlertType.Error) {
         title = "Error"

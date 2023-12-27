@@ -17,6 +17,7 @@ import akka.cluster.ClusterEvent.UnreachableMember
 import akka.cluster.ClusterEvent.MemberEvent
 import akka.actor.Address
 import com.doodlr.ClientMain
+import com.doodlr.ClientMain.WhiteboardChatUi
 import com.doodlr.models.User
 
 object Client {
@@ -129,6 +130,9 @@ object Client {
 //            }
             members.clear()
             members ++= x
+            println("-----------------------------------------------------------------")
+            println(x.toString())
+            println("-----------------------------------------------------------------")
             messageStarted()
           case _ =>
             Behaviors.unhandled
@@ -147,7 +151,7 @@ object Client {
       case Message(msg, from) =>
         Platform.runLater {
           ///// problem here , cany compile, cannot access the controller from main like this
-          ClientMain.whiteboardChatUiController.updateChatList(msg)
+          WhiteboardChatUi.control.updateChatList(msg)
         }
         Behaviors.same
       case MemberList(list: Iterable[User]) =>

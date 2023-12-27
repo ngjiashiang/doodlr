@@ -43,8 +43,6 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
   val recievedChats: ObservableBuffer[String] = new ObservableBuffer[String]()
   chatList.items = recievedChats
 
-  var clientActorRef: Option[ActorRef[Client.Command]] = None
-
   slider.valueProperty().addListener(_ => {
     val value: Int = slider.getValue.toInt
     lineThickness.setText(s"${value}")
@@ -155,6 +153,7 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
   }
 
   def updateChatList(chatContext: String): Unit = {
-    recievedChats += chatContext
+    chatList.getItems.add(chatContext)
+//    recievedChats += chatContext
   }
 }

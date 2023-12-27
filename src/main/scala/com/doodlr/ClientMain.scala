@@ -21,14 +21,14 @@ import javafx.{scene => jfxs}
 object ClientMain extends JFXApp {
   implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
   val clientConfig: Config = ConfigFactory.load("configs/client-config.conf")
-  val mainSystem = akka.actor.ActorSystem("DoodlrClientHotel", clientConfig)
+  val mainSystem = akka.actor.ActorSystem("DoodlrSystem", clientConfig)
   val greeterMain: ActorSystem[Nothing] = mainSystem.toTyped
   val cluster = Cluster(greeterMain)
   //  val discovery: ServiceDiscovery = Discovery(mainSystem).discovery
 
   val userRef = mainSystem.spawn(Client(), "DoodlrClient")
 
-//  userRef ! Client.start
+  userRef ! Client.start
 
   //  def joinPublicSeedNode(): Unit = {
   //    val lookup: Future[Resolved] =
@@ -44,11 +44,15 @@ object ClientMain extends JFXApp {
   //  }
 
   def joinLocalSeedNode(): Unit = {
-    val serverConfig: Config = ConfigFactory.load("configs/server-config.conf")
-    val serverIpAddress: String = serverConfig.getString("akka.actor.remote.artery.canonical.hostname")
-    val serverPort: Int = serverConfig.getInt("akka.actor.remote.artery.canonical.port")
+//    val serverConfig: Config = ConfigFactory.load("configs/server-config.conf")
+//    val serverIpAddress: String = serverConfig.getString("akka.actor.remote.artery.canonical.hostname")
+//    val serverPort: Int = serverConfig.getInt("akka.actor.remote.artery.canonical.port")
     // special Akka Actor Name Service (AANS)
-    val address = akka.actor.Address("akka", "DoodlrServerHotel", serverIpAddress, serverPort)
+    val address = akka.actor.Address("akka",
+      "DoodlrSystem",
+      "192.168.100.5",
+      2222
+    )
     cluster.manager ! JoinSeedNodes(List(address))
   }
 
@@ -80,26 +84,38 @@ object ClientMain extends JFXApp {
     resizable = false
   }
 
-  def setPageMenu(): Unit = {
-    val resource = getClass.getResource(s"view/Menu.fxml")
+  object Menu {
+    val resource = getClass.getResource("view/Menu.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
     loader.load()
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
-    this.roots.setCenter(roots)
+    def load(): Unit = {
+      ClientMain.roots.setCenter(roots)
+    }
   }
 
-  def setPageWhiteBoard(): Unit = {
-    val resource = getClass.getResource(s"view/WhitboardChatUi.fxml")
+  object WhiteboardChatUi {
+    val resource = getClass.getResource("view/WhiteboardChatUi.fxml")
     val loader = new FXMLLoader(resource, NoDependencyResolver)
     loader.load()
     val roots = loader.getRoot[jfxs.layout.AnchorPane]
-    this.roots.setCenter(roots)
-    val whiteboardChatUiController = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
-    whiteboardChatUiController.clientActorRef = Option(userRef)
+    val control = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
+    def load(): Unit = {
+      ClientMain.roots.setCenter(roots)
+    }
   }
+
+//  def setPageWhiteBoard(): Unit = {
+//    val resource = getClass.getResource(s"view/WhitboardChatUi.fxml")
+//    val loader = new FXMLLoader(resource, NoDependencyResolver)
+//    loader.load()
+//    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+//    this.roots.setCenter(roots)
+//    val whiteboardChatUiController = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
+//  }
 
   var userName = ""
-  setPageMenu()
+  Menu.load()
 
   stage.onCloseRequest = handle({
     println("hehe")
