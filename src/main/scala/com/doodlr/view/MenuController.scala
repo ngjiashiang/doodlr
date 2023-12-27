@@ -18,13 +18,11 @@ import scalafx.Includes._
 
 @sfxml
 class MenuController (private val joinButton: Button, private val nameField: TextField) {
-  var clientActorRef: Option[ActorRef[Client.Command]] = None
-
   def handleJoin(): Unit = {
     val userName = nameField.getText
     if (userName.nonEmpty) {
       ClientMain.userName = userName
-      clientActorRef map (_ ! Client.StartJoin(userName))
+      ClientMain.userRef ! Client.StartJoin(userName)
       WhiteboardChatUi.load()
     } else {
       new Alert(AlertType.Error) {

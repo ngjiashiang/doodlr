@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="problematic commit">
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="problematic commit, actors are not recieving anything, both from client main and controllers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/client-config.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/configs/server-config.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ServerMain.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" afterDir="false" />
@@ -94,7 +92,7 @@
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ClientMain">
+  <component name="RunManager">
     <configuration name="ClientMain" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="com.doodlr.ClientMain" />
       <module name="simpleChatProgram" />
@@ -197,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703656883552</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="problematic commit, actors are not recieving anything, both from client main and controllers">
+      <option name="closed" value="true" />
+      <created>1703663855065</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703663855065</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -205,6 +211,7 @@
     <MESSAGE value="fixed stroke issue" />
     <MESSAGE value="some comments" />
     <MESSAGE value="problematic commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="problematic commit" />
+    <MESSAGE value="problematic commit, actors are not recieving anything, both from client main and controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="problematic commit, actors are not recieving anything, both from client main and controllers" />
   </component>
 </project>

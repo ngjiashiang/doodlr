@@ -30,6 +30,13 @@ object Client {
 
   final case class SendMessageL(target: ActorRef[Client.Command], content: String) extends Command
 
+  final case class SendDrawingL(target: ActorRef[Client.Command], colorCode: String, isDotted: Boolean,
+                                previousXCoordinate: Double, previousYCoordinate: Double,
+                                currentXCoordinate: Double, currentYCoordinate: Double,
+                                lineWidth: Double) extends Command
+
+  final case class ClearDrawingL(target: ActorRef[Client.Command]) extends Command
+
   final case object FindTheServer extends Command
 
   private case class ListingResponse(listing: Receptionist.Listing) extends Command
@@ -40,18 +47,18 @@ object Client {
 
   val members = new ObservableHashSet[User]()
 
-//  val unreachables = new ObservableHashSet[Address]()
-//  unreachables.onChange { (ns, _) =>
-//    Platform.runLater {
-//      ClientMain.control.updateList(members.toList.filter(y => !unreachables.exists(x => x == y.ref.path.address)))
-//    }
-//  }
-//
-//  members.onChange { (ns, _) =>
-//    Platform.runLater {
-//      ClientMain.control.updateList(ns.toList.filter(y => !unreachables.exists(x => x == y.ref.path.address)))
-//    }
-//  }
+  //  val unreachables = new ObservableHashSet[Address]()
+  //  unreachables.onChange { (ns, _) =>
+  //    Platform.runLater {
+  //      ClientMain.control.updateList(members.toList.filter(y => !unreachables.exists(x => x == y.ref.path.address)))
+  //    }
+  //  }
+  //
+  //  members.onChange { (ns, _) =>
+  //    Platform.runLater {
+  //      ClientMain.control.updateList(ns.toList.filter(y => !unreachables.exists(x => x == y.ref.path.address)))
+  //    }
+  //  }
 
   //chat protocol
   final case class MemberList(list: Iterable[User]) extends Command
@@ -59,6 +66,13 @@ object Client {
   final case class Joined(list: Iterable[User]) extends Command
 
   final case class Message(msg: String, from: ActorRef[Client.Command]) extends Command
+
+  final case class Draw(colorCode: String, isDotted: Boolean,
+                        previousXCoordinate: Double, previousYCoordinate: Double,
+                        currentXCoordinate: Double, currentYCoordinate: Double,
+                        lineWidth: Double) extends Command
+
+  final case object ClearDrawing extends Command
 
   var defaultBehavior: Option[Behavior[Client.Command]] = None
   var remoteOpt: Option[ActorRef[PeerDiscoveryServerActor.Command]] = None
@@ -89,6 +103,12 @@ object Client {
       defaultBehavior = Some(Behaviors.receiveMessage { message =>
         message match {
           case Client.start =>
+            println("started")
+            context.self ! FindTheServer
+            Behaviors.same
+
+          case FindTheServer =>
+            println(s"Clinet Hello: got a FindTheServer message")
             context.system.receptionist ! Receptionist.Find(PeerDiscoveryServerActor.ServerKey, listingAdapter)
             Behaviors.same
           // (4) send a Find message to the Receptionist, saying
@@ -125,9 +145,9 @@ object Client {
             remoteOpt.foreach(_ ! PeerDiscoveryServerActor.JoinChat(name, context.self))
             Behaviors.same
           case Client.Joined(x) =>
-//            Platform.runLater {
-//              ClientMain.control.displayStatus("joined")
-//            }
+            //            Platform.runLater {
+            //              ClientMain.control.displayStatus("joined")
+            //            }
             members.clear()
             members ++= x
             println("-----------------------------------------------------------------")
@@ -148,6 +168,16 @@ object Client {
       case SendMessageL(target, content) =>
         target ! Message(content, context.self)
         Behaviors.same
+      case SendDrawingL(target: ActorRef[Client.Command], colorCode: String, isDotted: Boolean,
+        previousXCoordinate: Double, previousYCoordinate: Double,
+        currentXCoordinate: Double, currentYCoordinate: Double,
+        lineWidth: Double
+      ) =>
+        target ! Draw(colorCode, isDotted, previousXCoordinate, previousYCoordinate, currentXCoordinate, currentYCoordinate, lineWidth)
+        Behaviors.same
+      case ClearDrawingL(target: ActorRef[Client.Command]) =>
+        target ! ClearDrawing
+        Behaviors.same
       case Message(msg, from) =>
         Platform.runLater {
           ///// problem here , cany compile, cannot access the controller from main like this
@@ -158,6 +188,23 @@ object Client {
         //// instead of flushing the whole list, would it be better if we filter it
         members.clear()
         members ++= list
+        Behaviors.same
+      case Draw(colorCode: String, isDotted: Boolean,
+        previousXCoordinate: Double, previousYCoordinate: Double,
+        currentXCoordinate: Double, currentYCoordinate: Double,
+        lineWidth: Double
+      ) =>
+        Platform.runLater {
+          WhiteboardChatUi.control.updateCanvas(colorCode, isDotted,
+            previousXCoordinate, previousYCoordinate,
+            currentXCoordinate, currentYCoordinate, lineWidth)
+        }
+        Behaviors.same
+      case ClearDrawing =>
+        Platform.runLater {
+          ///// problem here , cany compile, cannot access the controller from main like this
+          WhiteboardChatUi.control.resetCanvas()
+        }
         Behaviors.same
     }
   }.receiveSignal {

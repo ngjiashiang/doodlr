@@ -14,20 +14,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="734.0" prefWidth="856.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doodlr.view.WhiteboardChatUiController">
+<AnchorPane prefHeight="734.0" prefWidth="856.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doodlr.view.WhiteboardChatUiController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="800.0" prefWidth="1154.0">
          <children>
-            <SplitPane dividerPositions="0.07769423558897243" orientation="VERTICAL" prefHeight="800.0" prefWidth="887.0">
+            <SplitPane dividerPositions="0.11278195488721804" orientation="VERTICAL" prefHeight="800.0" prefWidth="887.0">
                <items>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="267.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;">
                      <children>
-                        <Slider fx:id="slider" layoutX="607.0" layoutY="12.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="45.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-                        <ColorPicker fx:id="colourPicker" layoutX="201.0" layoutY="14.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
-                        <CheckBox fx:id="dottedCheckbox" layoutX="352.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleDotted" text="Speed-sensitive dotted line" />
-                        <Label fx:id="lineThickness" layoutX="591.0" layoutY="19.0" text="1" />
+                        <Slider fx:id="slider" layoutX="598.0" layoutY="17.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="0.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                        <ColorPicker fx:id="colourPicker" layoutX="246.0" layoutY="14.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
+                        <CheckBox fx:id="dottedCheckbox" layoutX="392.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleDotted" prefHeight="45.0" prefWidth="119.0" text="Speed-sensitive dotted line" wrapText="true" />
+                        <Label fx:id="lineThickness" layoutX="581.0" layoutY="21.0" text="1" />
                         <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#changeBlack" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/blackpencil.png" />
@@ -43,16 +45,28 @@
                               <Image url="@image/redpencil.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="lineThickness1" layoutX="14.0" layoutY="2.0" text="Quick Change Colour">
+                        <Label fx:id="lineThickness1" layoutX="64.0" layoutY="-3.0" text="Quick Change">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="170.0" layoutY="18.0" onMouseClicked="#handleErazer" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/erazer.png" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="542.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Width" wrappingWidth="39.0" />
+                        <Line endX="4.0" endY="41.0" layoutX="222.0" layoutY="18.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
+                        <Line endX="4.0" endY="41.0" layoutX="376.0" layoutY="19.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
+                        <Line endX="4.0" endY="41.0" layoutX="507.0" layoutY="18.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
+                        <Line endX="876.0" endY="-20.0" layoutX="7.0" layoutY="84.0" startX="-7.0" startY="-20.0" strokeWidth="5.0" />
+                        <Text layoutX="536.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips: Double click on area below to clear all drawing for all users" />
+                        <Text layoutX="7.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw in area below, chat with chatbox on the right." />
                      </children>
                   </AnchorPane>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="399.0" prefWidth="133.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="883.0">
                      <children>
-                        <Canvas fx:id="canvas" height="732.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
+                        <Canvas fx:id="canvas" height="705.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
                      </children>
                   </AnchorPane>
                </items>
@@ -65,7 +79,7 @@
                         <Font size="15.0" />
                      </font>
                   </TextArea>
-                  <Button onMouseClicked="#handleSendChat" mnemonicParsing="false" prefHeight="50.0" prefWidth="271.0" text="Send" />
+                  <Button mnemonicParsing="false" onMouseClicked="#handleSendChat" prefHeight="50.0" prefWidth="271.0" text="Send" />
                </children>
             </VBox>
          </children>

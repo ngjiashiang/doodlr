@@ -36,7 +36,7 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
 
   var localDrawDotted: Boolean = false
   var localColorCode: String = colourPicker.getValue.toString
-  var localLineWidth: Int = slider.getValue.toInt
+  var localLineWidth: Double = 1
   var lastXCoordinate: Double = 0
   var lastYCoordinate: Double = 0
 
@@ -65,6 +65,11 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
     localColorCode = colourPicker.getValue.toString
   }
 
+  def handleErazer(event: MouseEvent): Unit = {
+    colourPicker.setValue(Color.White)
+    localColorCode = colourPicker.getValue.toString
+  }
+
   def updateCanvas(colorCode: String, isDotted: Boolean, previousXCoordinate: Double, previousYCoordinate: Double, currentXCoordinate: Double, currentYCoordinate: Double, lineWidth: Double): Unit = {
     gc.setLineWidth(lineWidth)
     gc.setStroke(Paint.valueOf(colorCode))
@@ -73,7 +78,7 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
     print(s"color: ${colorCode} | ")
     if (isDotted) {
       println("dotted")
-      gc.setLineDashes(8.0, 5.0) // Set 8-pixel dash, 25-pixel space
+      gc.setLineDashes(8.0, 25.0) // Set 8-pixel dash, 25-pixel space
       println(s"x: ${currentXCoordinate}, y: ${currentYCoordinate}")
       gc.strokeLine(previousXCoordinate, previousYCoordinate, currentXCoordinate, currentYCoordinate)
       gc.setLineDashes() // Reset to solid line
@@ -120,14 +125,18 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
   def handleDrag(event: MouseEvent): Unit = {
     val currentX = event.getX
     val currentY = event.getY
-    updateCanvas(localColorCode, localDrawDotted, lastXCoordinate, lastYCoordinate, currentX, currentY, localLineWidth)
+    Client.members.foreach { user =>
+      ClientMain.userRef ! Client.SendDrawingL(user.ref, localColorCode, localDrawDotted, lastXCoordinate, lastYCoordinate, currentX, currentY, localLineWidth)
+    }
     lastXCoordinate = event.getX
     lastYCoordinate = event.getY
   }
 
   def handleClick(event: MouseEvent): Unit = {
     if (event.clickCount > 1) {
-      resetCanvas()
+      Client.members.foreach { user =>
+        ClientMain.userRef ! Client.ClearDrawingL(user.ref)
+      }
       println("Canvas cleared.")
     }
   }
@@ -145,7 +154,6 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
 
   def handleSendChat(): Unit = {
     val textToSend = ClientMain.userName + ": " + chatInput.getText
-    updateChatList(textToSend)
     Client.members.foreach { user =>
       ClientMain.userRef ! Client.SendMessageL(user.ref, textToSend)
     }
@@ -154,6 +162,5 @@ class WhiteboardChatUiController(private val canvas: Canvas, private val dottedC
 
   def updateChatList(chatContext: String): Unit = {
     chatList.getItems.add(chatContext)
-//    recievedChats += chatContext
   }
 }

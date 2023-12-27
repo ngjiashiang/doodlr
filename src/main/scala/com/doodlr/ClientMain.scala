@@ -48,6 +48,7 @@ object ClientMain extends JFXApp {
 //    val serverIpAddress: String = serverConfig.getString("akka.actor.remote.artery.canonical.hostname")
 //    val serverPort: Int = serverConfig.getInt("akka.actor.remote.artery.canonical.port")
     // special Akka Actor Name Service (AANS)
+    // normally server ip is fixed, thats why i do this
     val address = akka.actor.Address("akka",
       "DoodlrSystem",
       "192.168.100.5",
@@ -77,7 +78,7 @@ object ClientMain extends JFXApp {
 
   // initialize stage
   stage = new PrimaryStage {
-    title = "hehe"
+    title = "Doodlr"
     scene = new Scene {
       root = roots
     }
@@ -118,6 +119,7 @@ object ClientMain extends JFXApp {
   Menu.load()
 
   stage.onCloseRequest = handle({
+    mainSystem.terminate
     println("hehe")
   })
 }
