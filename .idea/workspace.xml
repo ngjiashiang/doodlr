@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="added readme">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="grammar fix">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +225,39 @@
       <option name="project" value="LOCAL" />
       <updated>1703690249175</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="spelling fix lol">
+      <option name="closed" value="true" />
+      <created>1703690303612</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703690303612</updated>
+    </task>
+    <task id="LOCAL-00011" summary="consitency fix">
+      <option name="closed" value="true" />
+      <created>1703690383876</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703690383876</updated>
+    </task>
+    <task id="LOCAL-00012" summary="spelling fix">
+      <option name="closed" value="true" />
+      <created>1703690461527</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703690461527</updated>
+    </task>
+    <task id="LOCAL-00013" summary="grammar fix">
+      <option name="closed" value="true" />
+      <created>1703690507068</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703690507068</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -236,6 +268,10 @@
     <MESSAGE value="problematic commit, actors are not recieving anything, both from client main and controllers" />
     <MESSAGE value="nice, all done, i guess" />
     <MESSAGE value="added readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="added readme" />
+    <MESSAGE value="spelling fix lol" />
+    <MESSAGE value="consitency fix" />
+    <MESSAGE value="spelling fix" />
+    <MESSAGE value="grammar fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="grammar fix" />
   </component>
 </project>
