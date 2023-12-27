@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="problematic commit, actors are not recieving anything, both from client main and controllers">
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="nice, all done, i guess">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/actors/Client.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/MenuController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/WhiteboardChatUiController.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +53,9 @@
         <option name="url" value="https://github.com/ngjiashiang/doodlr.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -203,7 +202,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703663855065</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="nice, all done, i guess">
+      <option name="closed" value="true" />
+      <created>1703680443878</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703680443878</updated>
+    </task>
+    <task id="LOCAL-00008" summary="nice, all done, i guess">
+      <option name="closed" value="true" />
+      <created>1703680455562</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703680455562</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,6 +227,7 @@
     <MESSAGE value="some comments" />
     <MESSAGE value="problematic commit" />
     <MESSAGE value="problematic commit, actors are not recieving anything, both from client main and controllers" />
-    <option name="LAST_COMMIT_MESSAGE" value="problematic commit, actors are not recieving anything, both from client main and controllers" />
+    <MESSAGE value="nice, all done, i guess" />
+    <option name="LAST_COMMIT_MESSAGE" value="nice, all done, i guess" />
   </component>
 </project>
