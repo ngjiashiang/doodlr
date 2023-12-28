@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="grammar fix">
+    <list default="true" id="a4458dc3-9047-4658-ace1-7bfeb7027ddd" name="Changes" comment="delete unneeded files">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/Guide.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/guide(chat).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/guide(drawing).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/image/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/view/LayoutController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/Layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/Layout.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/doodlr/view/WhiteboardChatUi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/doodlr/ClientMain.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,8 +93,9 @@
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\com\doodlr\view\image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources" />
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\com\doodlr\view" />
+      <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\com\doodlr\view\image" />
+      <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources" />
       <recent name="C:\Users\User\Desktop\distributed_systems_class\doodlr\src\main\resources\view" />
     </key>
   </component>
@@ -257,7 +266,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703690507068</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="delete unneeded files">
+      <option name="closed" value="true" />
+      <created>1703691472869</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703691472869</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,6 +289,7 @@
     <MESSAGE value="consitency fix" />
     <MESSAGE value="spelling fix" />
     <MESSAGE value="grammar fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="grammar fix" />
+    <MESSAGE value="delete unneeded files" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unneeded files" />
   </component>
 </project>

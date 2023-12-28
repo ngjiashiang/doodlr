@@ -17,6 +17,8 @@ import akka.actor.typed.scaladsl.adapter._
 import com.doodlr.actors.Client
 import com.typesafe.config.{Config, ConfigFactory}
 import javafx.{scene => jfxs}
+import scalafx.scene.image.Image
+import scalafx.stage.{Modality, Stage}
 
 object ClientMain extends JFXApp {
   implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
@@ -44,9 +46,9 @@ object ClientMain extends JFXApp {
   //  }
 
   def joinLocalSeedNode(): Unit = {
-//    val serverConfig: Config = ConfigFactory.load("configs/server-config.conf")
-//    val serverIpAddress: String = serverConfig.getString("akka.actor.remote.artery.canonical.hostname")
-//    val serverPort: Int = serverConfig.getInt("akka.actor.remote.artery.canonical.port")
+    //    val serverConfig: Config = ConfigFactory.load("configs/server-config.conf")
+    //    val serverIpAddress: String = serverConfig.getString("akka.actor.remote.artery.canonical.hostname")
+    //    val serverPort: Int = serverConfig.getInt("akka.actor.remote.artery.canonical.port")
     // special Akka Actor Name Service (AANS)
     // normally server ip is fixed, thats why i do this
     val address = akka.actor.Address("akka",
@@ -73,12 +75,13 @@ object ClientMain extends JFXApp {
     "-fx-background-position: center center; " +
     "-fx-background-repeat: repeat;");
 
-//  val control = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
-//  control.chatClientRef = Option(userRef)
+  //  val control = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
+  //  control.chatClientRef = Option(userRef)
 
   // initialize stage
   stage = new PrimaryStage {
     title = "Doodlr"
+    icons += new Image(getClass.getResourceAsStream("view/image/logo.png"))
     scene = new Scene {
       root = roots
     }
@@ -106,14 +109,31 @@ object ClientMain extends JFXApp {
     }
   }
 
-//  def setPageWhiteBoard(): Unit = {
-//    val resource = getClass.getResource(s"view/WhitboardChatUi.fxml")
-//    val loader = new FXMLLoader(resource, NoDependencyResolver)
-//    loader.load()
-//    val roots = loader.getRoot[jfxs.layout.AnchorPane]
-//    this.roots.setCenter(roots)
-//    val whiteboardChatUiController = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
-//  }
+  // show guide through menu bar
+  def displayGuide(): Unit = {
+
+    val resource = getClass.getResource("view/Guide.fxml")
+    val loader = new FXMLLoader(resource, NoDependencyResolver)
+    loader.load()
+    val roots2 = loader.getRoot[jfxs.Parent]
+
+    val dialog = new Stage() {
+      initModality(Modality.ApplicationModal)
+      initOwner(stage)
+      scene = new Scene {
+        root = roots2
+      }
+    }
+    dialog.show()
+  }
+  //  def setPageWhiteBoard(): Unit = {
+  //    val resource = getClass.getResource(s"view/WhitboardChatUi.fxml")
+  //    val loader = new FXMLLoader(resource, NoDependencyResolver)
+  //    loader.load()
+  //    val roots = loader.getRoot[jfxs.layout.AnchorPane]
+  //    this.roots.setCenter(roots)
+  //    val whiteboardChatUiController = loader.getController[com.doodlr.view.WhiteboardChatUiController#Controller]()
+  //  }
 
   var userName = ""
   Menu.load()

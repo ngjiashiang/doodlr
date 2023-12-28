@@ -7,12 +7,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -22,64 +23,99 @@
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="800.0" prefWidth="1154.0">
          <children>
-            <SplitPane dividerPositions="0.11278195488721804" orientation="VERTICAL" prefHeight="800.0" prefWidth="887.0">
-               <items>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="883.0">
+               <children>
+                  <Canvas fx:id="canvas" height="699.0" layoutY="101.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
+                  <VBox prefHeight="100.0" prefWidth="883.0" style="-fx-border-color: black;">
                      <children>
-                        <Slider fx:id="slider" layoutX="598.0" layoutY="17.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="0.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
-                        <ColorPicker fx:id="colourPicker" layoutX="246.0" layoutY="14.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
-                        <CheckBox fx:id="dottedCheckbox" layoutX="392.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleDotted" prefHeight="45.0" prefWidth="119.0" text="Speed-sensitive dotted line" wrapText="true" />
-                        <Label fx:id="lineThickness" layoutX="581.0" layoutY="21.0" text="1" />
-                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#changeBlack" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/blackpencil.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="63.0" layoutY="14.0" onMouseClicked="#changeBlue" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/bluepencil.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="113.0" layoutY="14.0" onMouseClicked="#changeRed" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/redpencil.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="lineThickness1" layoutX="64.0" layoutY="-3.0" text="Quick Change">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="170.0" layoutY="18.0" onMouseClicked="#handleErazer" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/erazer.png" />
-                           </image>
-                        </ImageView>
-                        <Text layoutX="542.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Width" wrappingWidth="39.0" />
-                        <Line endX="4.0" endY="41.0" layoutX="222.0" layoutY="18.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
-                        <Line endX="4.0" endY="41.0" layoutX="376.0" layoutY="19.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
-                        <Line endX="4.0" endY="41.0" layoutX="507.0" layoutY="18.0" startX="4.0" startY="-20.0" strokeWidth="5.0" />
-                        <Line endX="876.0" endY="-20.0" layoutX="7.0" layoutY="84.0" startX="-7.0" startY="-20.0" strokeWidth="5.0" />
-                        <Text layoutX="536.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips: Double click on area below to clear all drawing for all users" />
-                        <Text layoutX="7.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw in area below, chat with chatbox on the right." />
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <center>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Slider fx:id="slider" layoutX="598.0" layoutY="17.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="0.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+                                    <ColorPicker fx:id="colourPicker" layoutX="243.0" layoutY="27.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
+                                    <CheckBox fx:id="dottedCheckbox" layoutX="381.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleDotted" prefHeight="63.0" prefWidth="139.0" text="Speed-sensitive dotted line" wrapText="true">
+                                       <font>
+                                          <Font name="Dubai Bold" size="15.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <Label fx:id="lineThickness" layoutX="581.0" layoutY="21.0" text="1" />
+                                    <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="13.0" layoutY="14.0" onMouseClicked="#changeBlack" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/blackpencil.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="63.0" layoutY="14.0" onMouseClicked="#changeBlue" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/bluepencil.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="50.0" fitWidth="55.0" layoutX="113.0" layoutY="14.0" onMouseClicked="#changeRed" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/redpencil.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="lineThickness1" layoutX="60.0" layoutY="-2.0" text="Quick Change">
+                                       <font>
+                                          <Font name="Dubai Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="39.0" fitWidth="50.0" layoutX="170.0" layoutY="18.0" onMouseClicked="#handleErazer" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@image/erazer.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="531.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Width" wrappingWidth="49.999981343746185">
+                                       <font>
+                                          <Font name="Dubai Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Line endX="4.0" endY="41.0" layoutX="222.0" layoutY="18.0" startX="4.0" startY="-20.0" stroke="#ebe7e7" strokeWidth="3.0" />
+                                    <Line endX="4.0" endY="41.0" layoutX="370.0" layoutY="19.0" startX="4.0" startY="-20.0" stroke="#ebe7e7" strokeWidth="3.0" />
+                                    <Line endX="4.0" endY="41.0" layoutX="518.0" layoutY="18.0" startX="4.0" startY="-20.0" stroke="#ebe7e7" strokeWidth="3.0" />
+                                    <Line endX="883.0" endY="-17.0" layoutX="-2.0" layoutY="84.0" startX="2.0000171661376953" startY="-17.0" stroke="#ebe7e7" strokeWidth="3.0" />
+                                    <Text layoutX="265.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Colour" wrappingWidth="74.99998134374619">
+                                       <font>
+                                          <Font name="Dubai Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                        </BorderPane>
+                        <HBox prefHeight="8.0" prefWidth="859.0">
+                           <children>
+                              <Region prefHeight="200.0" prefWidth="200.0" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Draw in area below, chat with chatbox on the right." HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Dubai Light" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fill="#eb0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips: Double click on area below to clear all drawing for all users" textAlignment="RIGHT" wrappingWidth="458.409912109375" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Dubai Light" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Region prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </HBox>
                      </children>
-                  </AnchorPane>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="883.0">
-                     <children>
-                        <Canvas fx:id="canvas" height="705.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
-                     </children>
-                  </AnchorPane>
-               </items>
-            </SplitPane>
+                  </VBox>
+               </children>
+            </AnchorPane>
             <VBox prefHeight="800.0" prefWidth="271.0" style="-fx-background-color: gray;">
                <children>
-                  <ListView fx:id="chatList" prefHeight="672.0" prefWidth="224.0" style="-fx-border-color: black;" />
+                  <ListView fx:id="chatList" prefHeight="672.0" prefWidth="224.0" style="-fx-border-color: #ebe7e7;" />
                   <TextArea fx:id="chatInput" prefHeight="78.0" prefWidth="265.0" promptText="Type your message here">
                      <font>
-                        <Font size="15.0" />
+                        <Font name="Dubai Regular" size="16.0" />
                      </font>
                   </TextArea>
-                  <Button mnemonicParsing="false" onMouseClicked="#handleSendChat" prefHeight="50.0" prefWidth="271.0" text="Send" />
+                  <Button mnemonicParsing="false" onMouseClicked="#handleSendChat" prefHeight="50.0" prefWidth="271.0" text="Send">
+                     <font>
+                        <Font name="Dubai Bold" size="18.0" />
+                     </font></Button>
                </children>
             </VBox>
          </children>

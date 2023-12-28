@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="750.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fill="#1699c4" layoutX="315.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guide" textAlignment="CENTER" wrappingWidth="120.35199737548828" AnchorPane.topAnchor="14.355998992919922">
+         <font>
+            <Font name="Dubai Light" size="36.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="140.0" fitWidth="666.0" layoutX="42.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="210.0">
+         <image>
+            <Image url="@image/guide(drawing).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="139.0" fitWidth="275.0" layoutX="224.0" layoutY="441.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="224.0" AnchorPane.rightAnchor="251.0" AnchorPane.topAnchor="441.0">
+         <image>
+            <Image url="@image/guide(chat).png" />
+         </image>
+      </ImageView>
+      <Text layoutX="42.0" layoutY="89.09600067138672" strokeType="OUTSIDE" strokeWidth="0.0" text="Drawing Section" wrappingWidth="167.35199737548828" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="62.0">
+         <font>
+            <Font name="Dubai Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="42.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat Section" wrappingWidth="289.3519973754883" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="378.9039993286133">
+         <font>
+            <Font name="Dubai Regular" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="514.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move the slider to change line width" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="527.6480026245117" AnchorPane.topAnchor="132.0">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="506.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick change line colours or select eraser" textAlignment="CENTER" wrappingWidth="194.35199737548828" AnchorPane.leftAnchor="506.0" AnchorPane.topAnchor="279.0">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#030303" layoutX="514.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type your message in here" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="513.3519973754883" AnchorPane.rightAnchor="57.64800262451172" AnchorPane.topAnchor="450.42000007629395">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="276.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click &quot;Send&quot; button to send message" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.bottomAnchor="12.059995651245117" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="295.6480026245117">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="286.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select this to draw dotted line" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="285.6480026245117" AnchorPane.topAnchor="133.42000007629395">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="187.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customise line colour through this" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="384.6480026245117" AnchorPane.topAnchor="279.0">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
