@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -25,12 +24,12 @@
          <children>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="698.0" prefWidth="883.0">
                <children>
-                  <Canvas fx:id="canvas" height="699.0" layoutY="101.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
-                  <VBox prefHeight="100.0" prefWidth="883.0" style="-fx-border-color: black;">
+                  <Canvas fx:id="canvas" height="729.0" layoutY="72.0" onMouseClicked="#handleClick" onMouseDragged="#handleDrag" onMousePressed="#handleMousePressed" width="883.0" />
+                  <VBox prefHeight="72.0" prefWidth="883.0" style="-fx-border-color: black;">
                      <children>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                        <BorderPane prefHeight="67.0" prefWidth="881.0" VBox.vgrow="ALWAYS">
                            <center>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="883.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="64.0" prefWidth="881.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
                                  <children>
                                     <Slider fx:id="slider" layoutX="598.0" layoutY="17.0" majorTickUnit="10.0" max="20.0" min="1.0" minorTickCount="5" prefHeight="0.0" prefWidth="269.0" showTickLabels="true" showTickMarks="true" value="1.0" />
                                     <ColorPicker fx:id="colourPicker" layoutX="243.0" layoutY="27.0" onAction="#changeColour" prefHeight="31.0" prefWidth="119.0" />
@@ -83,23 +82,6 @@
                               </AnchorPane>
                            </center>
                         </BorderPane>
-                        <HBox prefHeight="8.0" prefWidth="859.0">
-                           <children>
-                              <Region prefHeight="200.0" prefWidth="200.0" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Draw in area below, chat with chatbox on the right." HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="Dubai Light" size="18.0" />
-                                 </font>
-                              </Text>
-                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                              <Text fill="#eb0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Tips: Double click on area below to clear all drawing for all users" textAlignment="RIGHT" wrappingWidth="458.409912109375" HBox.hgrow="ALWAYS">
-                                 <font>
-                                    <Font name="Dubai Light" size="18.0" />
-                                 </font>
-                              </Text>
-                              <Region prefHeight="200.0" prefWidth="200.0" />
-                           </children>
-                        </HBox>
                      </children>
                   </VBox>
                </children>

@@ -13,7 +13,7 @@
             <Font name="Dubai Light" size="36.0" />
          </font>
       </Text>
-      <ImageView fitHeight="140.0" fitWidth="666.0" layoutX="42.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="210.0">
+      <ImageView fitHeight="140.0" fitWidth="666.0" layoutX="42.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="170.0">
          <image>
             <Image url="@image/guide(drawing).png" />
          </image>
@@ -33,12 +33,12 @@
             <Font name="Dubai Regular" size="24.0" />
          </font>
       </Text>
-      <Text layoutX="514.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move the slider to change line width" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="527.6480026245117" AnchorPane.topAnchor="132.0">
+      <Text layoutX="36.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Move the slider to change line width" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="535.6480026245117" AnchorPane.topAnchor="102.42000007629395">
          <font>
             <Font name="Dubai Light" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="506.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick change line colours or select eraser" textAlignment="CENTER" wrappingWidth="194.35199737548828" AnchorPane.leftAnchor="506.0" AnchorPane.topAnchor="279.0">
+      <Text layoutX="505.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quick change line colours or select eraser" textAlignment="CENTER" wrappingWidth="194.35199737548828" AnchorPane.leftAnchor="505.0" AnchorPane.topAnchor="247.42000007629395">
          <font>
             <Font name="Dubai Light" size="20.0" />
          </font>
@@ -53,12 +53,17 @@
             <Font name="Dubai Light" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="286.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select this to draw dotted line" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="285.6480026245117" AnchorPane.topAnchor="133.42000007629395">
+      <Text layoutX="286.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select this to draw dotted line" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="286.0" AnchorPane.rightAnchor="285.6480026245117" AnchorPane.topAnchor="101.42000007629395">
          <font>
             <Font name="Dubai Light" size="20.0" />
          </font>
       </Text>
-      <Text layoutX="187.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customise line colour through this" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="384.6480026245117" AnchorPane.topAnchor="279.0">
+      <Text layoutX="187.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customise line colour through this" textAlignment="CENTER" wrappingWidth="178.35199737548828" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="384.6480026245117" AnchorPane.topAnchor="255.0">
+         <font>
+            <Font name="Dubai Light" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw in area below, double click to clear all drawing for all user" textAlignment="CENTER" wrappingWidth="707.3519973754883">
          <font>
             <Font name="Dubai Light" size="20.0" />
          </font>

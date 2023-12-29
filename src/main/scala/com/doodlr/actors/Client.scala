@@ -209,6 +209,7 @@ object Client {
     }
   }.receiveSignal {
     case (context, PostStop) =>
+      println("server boom boom")
       for (name <- nameOpt;
            remote <- remoteOpt) {
         remote ! PeerDiscoveryServerActor.Leave(name, context.self)
