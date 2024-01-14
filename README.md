@@ -1,6 +1,7 @@
 # Doodlr
 ## Introduction
-Imagine if you can chat and draw with others in Mxcrxsxft Pxxnt. Yes, that's basically what I am doing.
+My first try at Event-Based and Stateful applications.
+Basically Microsoft Paint, but you can collaborate and chat with other users.
 
 ## Running this locally
 1. Clone this repository / download code as zip
